@@ -80,6 +80,14 @@ jobs:
         cd openwrt
         ./scripts/feeds update
         ./scripts/feeds install -a
+        rm -rf feeds/luci/modules/luci-base
+        rm -rf feeds/luci/modules/luci-mod-status
+        rm -rf feeds/packages/utils/coremark
+        rm -rf feeds/packages/net/v2ray-geodata
+        git clone https://github.com/immortalwrt/luci
+        cp -r luci/modules/luci-base feeds/luci/modules
+        cp -r luci/modules/luci-mod-status feeds/luci/modules
+        rm -rf ./tmp
         #git reset --hard 26f3634631244eedfbdfd61ea6cc3a2d7f5d896f
         useVersionInfo=$(git show -s --date=short --format="提交人: %an<br/>提交时间: %cd<br/>提交内容: %s<br/>commit hash: %H")
         echo "useVersionInfo=$useVersionInfo" >> $GITHUB_ENV
@@ -112,7 +120,7 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_breakings_SH
         $GITHUB_WORKSPACE/$DIY_my_SH
-
+        
     - name: SSH连接到Actions
       uses: P3TERX/ssh2actions@v1.0.0
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
