@@ -87,8 +87,6 @@ jobs:
         git clone https://github.com/immortalwrt/luci
         cp -r luci/modules/luci-base feeds/luci/modules
         cp -r luci/modules/luci-mod-status feeds/luci/modules
-        sed -i "s/hostname='OpenWrt'/hostname='Redmi-AX6'/g" package/base-files/files/bin/config_generate
-        sed -i "s/hostname='ImmortalWrt'/hostname='Redmi-AX6'/g" package/base-files/files/bin/config_generate
         git clone --depth=1 --single-branch --branch $(echo $OWRT_URL | grep -iq "lede" && echo "18.06" || echo "master") https://github.com/jerrykuku/luci-theme-argon.git
         git clone --depth=1 --single-branch --branch $(echo $OWRT_URL | grep -iq "lede" && echo "18.06" || echo "master") https://github.com/jerrykuku/luci-app-argon-config.git
         git clone --depth=1 --single-branch https://github.com/linkease/istore.git
