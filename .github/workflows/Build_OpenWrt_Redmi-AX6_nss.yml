@@ -30,10 +30,10 @@ on:
   #  types: [started]
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/qosmio/openwrt-ipq
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/AX6_mini.config
+  CONFIG_FILE: config/AX6_nss.config
   DIY_feeds_SH: sh/lede_diy-part1.sh
   DIY_breakings_SH: sh/breakings_diy-part2.sh
   DIY_my_SH: sh/AX6_lua_diy-part2.sh
