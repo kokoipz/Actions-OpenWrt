@@ -98,12 +98,12 @@ jobs:
     #- name: Revert ax6
      # run: cp -rf $GITHUB_WORKSPACE/general/AX6/target/linux/ipq807x/image/generic.mk openwrt/target/linux/ipq807x/image/
           
-    - name: 加载自定义订阅源
-      run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_feeds_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_feeds_SH
+    #- name: 加载自定义订阅源
+      #run: |
+       # [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+       # chmod +x $DIY_feeds_SH
+       # cd openwrt
+       # $GITHUB_WORKSPACE/$DIY_feeds_SH
         
     - name: 更新订阅源
       run: cd openwrt && ./scripts/feeds update -a
