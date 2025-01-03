@@ -32,7 +32,7 @@ on:
 env:
   REPO_URL: https://github.com/TerryLip/AX6NSS
   REPO_BRANCH: qualcommax-6.x-nss-wifi
-  FEEDS_CONF: feeds.conf.default
+  #FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/AX6_nss.config
   DIY_feeds_SH: sh/lede_diy-part1.sh
   DIY_breakings_SH: sh/breakings_diy-part2.sh
@@ -69,7 +69,6 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /mnt/workdir
         sudo chown $USER:$GROUPS /mnt/workdir
-        sudo apt-get install libpcre3-dev
 
     - name: 克隆源代码
       working-directory: /mnt/workdir
