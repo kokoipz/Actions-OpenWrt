@@ -31,7 +31,7 @@ on:
 
 env:
   REPO_URL: https://github.com/qosmio/openwrt-ipq
-  REPO_BRANCH: master
+  REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/AX6_nss.config
   DIY_feeds_SH: sh/lede_diy-part1.sh
