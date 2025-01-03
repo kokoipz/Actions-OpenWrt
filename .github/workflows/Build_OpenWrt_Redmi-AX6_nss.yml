@@ -30,8 +30,8 @@ on:
   #  types: [started]
 
 env:
-  REPO_URL: https://github.com/qosmio/openwrt-ipq
-  REPO_BRANCH: main-nss
+  REPO_URL: https://github.com/TerryLip/AX6NSS
+  REPO_BRANCH: qualcommax-6.x-nss-wifi
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/AX6_nss.config
   DIY_feeds_SH: sh/lede_diy-part1.sh
