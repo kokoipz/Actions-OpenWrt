@@ -80,6 +80,7 @@ jobs:
         cd openwrt
         ./scripts/feeds update
         ./scripts/feeds install -a
+        cp nss-setup/config-nss.seed .config
         #git reset --hard 26f3634631244eedfbdfd61ea6cc3a2d7f5d896f
         useVersionInfo=$(git show -s --date=short --format="提交人: %an<br/>提交时间: %cd<br/>提交内容: %s<br/>commit hash: %H")
         echo "useVersionInfo=$useVersionInfo" >> $GITHUB_ENV
