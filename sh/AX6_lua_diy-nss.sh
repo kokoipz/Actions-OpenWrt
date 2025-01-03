@@ -31,4 +31,13 @@ sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF./root/g' openwrt/package/lean/defaul
 sed -i "s/hostname='OpenWrt'/hostname='Redmi-AX6'/g" package/base-files/files/bin/config_generate
 sed -i "s/hostname='ImmortalWrt'/hostname='Redmi-AX6'/g" package/base-files/files/bin/config_generate
 
-
+#设计主题
+git clone --depth=1 --single-branch --branch $(echo $OWRT_URL | grep -iq "lede" && echo "main" || echo "js") https://github.com/gngpp/luci-theme-design.git
+git clone --depth=1 --single-branch https://github.com/gngpp/luci-app-design-config.git
+sed -i 's/dark/light/g' luci-app-design-config/root/etc/config/design
+#Argon 主题
+git clone --depth=1 --single-branch --branch $(echo $OWRT_URL | grep -iq "lede" && echo "18.06" || echo "master") https://github.com/jerrykuku/luci-theme-argon.git
+git clone --depth=1 --single-branch --branch $(echo $OWRT_URL | grep -iq "lede" && echo "18.06" || echo "master") https://github.com/jerrykuku/luci-app-argon-config.git
+#Linkease
+git clone --depth=1 --single-branch https://github.com/linkease/istore.git
+sed -i "s/luci-theme-bootstrap/luci-theme-$OWRT_THEME/g" $(find ./feeds/luci/collections/ -type f -name "Makefile")
