@@ -55,9 +55,9 @@
 - 使用源码（lede原厂分区）：https://github.com/coolsnowwolf/lede (6.1)
 - 使用源码（lede合并分区）：https://github.com/coolsnowwolf/lede (6.1)
 - 使用源码（immortalwrt合并分区）：https://github.com/immortalwrt/immortalwrt (5.15)
-- 默认IP：192.168.123.1
+- 默认IP：10.0.0.1
 - 用户名：root
-- 密码：password
+- 密码：root
 <details>
 <summary><b>&nbsp;Redmi AX6插件及预览</b><br/></summary>
 <br/>
