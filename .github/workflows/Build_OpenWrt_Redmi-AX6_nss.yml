@@ -69,6 +69,8 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /mnt/workdir
         sudo chown $USER:$GROUPS /mnt/workdir
+        sudo apt-get install libpcre3-dev
+        sudo apt-get install libcryptopp-dev libmanette-dev libdrm-dev
 
     - name: 克隆源代码
       working-directory: /mnt/workdir
